@@ -88,6 +88,11 @@
     <Compile Include="5. FrmLinq_To_Entity.Designer.cs">
       <DependentUpon>5. FrmLinq_To_Entity.cs</DependentUpon>
     </Compile>
+    <Compile Include="AD2019DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AD2019DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Category.cs">
       <DependentUpon>NWModel.tt</DependentUpon>
     </Compile>
@@ -195,6 +200,17 @@
     <EmbeddedResource Include="作業\Frm作業_3.resx">
       <DependentUpon>Frm作業_3.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="AD2019DataSet.xsc">
+      <DependentUpon>AD2019DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AD2019DataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AD2019DataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="AD2019DataSet.xss">
+      <DependentUpon>AD2019DataSet.xsd</DependentUpon>
+    </None>
     <None Include="NWDataSet.xsc">
       <DependentUpon>NWDataSet.xsd</DependentUpon>
     </None>

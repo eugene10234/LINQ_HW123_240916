@@ -539,7 +539,7 @@ namespace LinqLabs.作業
             FileInfo[] files = dirs.GetFiles();
             var groupedFiles = files
            .GroupBy(f => f.CreationTime.Year)
-           .Select(g => new
+           .Select(g => new 
            {
                年份 = g.Key,
                Files = g.ToList()
@@ -547,6 +547,22 @@ namespace LinqLabs.作業
            .OrderBy(g => g.年份)
            .ToList();
             treeView1.Nodes.Clear();
+            //foreach (var group in groupedFiles)
+            //{
+            //    string yearNodeText = group.年份.ToString();
+            //    TreeNode node = treeView1.Nodes.Add(yearNodeText);
+
+            //    foreach (var item in group.Files)
+            //    {
+            //        node.Nodes.Add(item.Name.ToString() + "  容量   " + item.Length.ToString() + "   Byte");
+            //    }
+            //}
+            bbbb(groupedFiles);
+           
+        }
+
+        private void bbbb(IEnumerable<dynamic> groupedFiles)
+        {
             foreach (var group in groupedFiles)
             {
                 string yearNodeText = group.年份.ToString();
