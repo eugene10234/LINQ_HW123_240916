@@ -134,46 +134,19 @@ namespace MyHomeWork
                                                  //break;
 
                 default:
-                    return s4;
+                    return (row => MessageBox.Show("error")!=0);
                     //break;
             }
         }
         protected Func<DataRow, bool> SFuncGenerator(int min, int max)
         {
-            bool check = min <= max;
-            (int lhs, int rhs) = (check) ? (min, max) : (max + 1, min - 1);
-            return
-                (row => (check) ? (row.Field<DateTime>("ModifiedDate").Month >= min &&
-                row.Field<DateTime>("ModifiedDate").Month <= max) :
-                !(row.Field<DateTime>("ModifiedDate").Month >= min &&
-                row.Field<DateTime>("ModifiedDate").Month <= max));
+            return (row => (min <= max) ? intRangeDate(row, min, max) :
+                !intRangeDate(row, max + 1, min - 1));
         }
-
-        //private static bool intRangeDateSelect(int min, int max, DataRow row)
-        //{
-        //    return (row.Field<DateTime>("ModifiedDate").Month >= min &&
-        //        row.Field<DateTime>("ModifiedDate").Month <= max);
-        //}
-
-        protected bool s1(DataRow row)
+        private static bool intRangeDate(DataRow row, int min, int max)
         {
-            return row.Field<DateTime>("ModifiedDate").Month >= 3 &&
-                row.Field<DateTime>("ModifiedDate").Month <= 5;
-        }
-        protected bool s2(DataRow row)
-        {
-            return row.Field<DateTime>("ModifiedDate").Month >= 6 &&
-                row.Field<DateTime>("ModifiedDate").Month <= 8;
-        }
-        protected bool s3(DataRow row)
-        {
-            return row.Field<DateTime>("ModifiedDate").Month >= 9 &&
-                row.Field<DateTime>("ModifiedDate").Month <= 11;
-        }
-        protected bool s4(DataRow row)
-        {
-            return !(row.Field<DateTime>("ModifiedDate").Month >= 3 &&
-                row.Field<DateTime>("ModifiedDate").Month <= 11);
+            return (row.Field<DateTime>("ModifiedDate").Month >= min &&
+                row.Field<DateTime>("ModifiedDate").Month <= max);
         }
         protected bool SelectDate(DataRow row)
         {
