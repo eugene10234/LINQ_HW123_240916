@@ -134,7 +134,7 @@ namespace MyHomeWork
                                                  //break;
 
                 default:
-                    return (row => MessageBox.Show("error")!=0);
+                    return (row => MessageBox.Show("error")==0);
                     //break;
             }
         }
