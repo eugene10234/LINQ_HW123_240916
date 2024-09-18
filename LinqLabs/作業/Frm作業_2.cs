@@ -50,7 +50,7 @@ namespace MyHomeWork
         }
         private void button5_Click(object sender, EventArgs e)
         {
-            GetBikeIEnumOP(SelectDate);
+            GetBikeIEnumOP(SelectYear);
             gdvShowOne(dataGridView1, _ConBikeq);
         }
         private void button10_Click(object sender, EventArgs e)
@@ -148,7 +148,7 @@ namespace MyHomeWork
             return (row.Field<DateTime>("ModifiedDate").Month >= min &&
                 row.Field<DateTime>("ModifiedDate").Month <= max);
         }
-        protected bool SelectDate(DataRow row)
+        protected bool SelectYear(DataRow row)
         {
             return row.Field<DateTime>("ModifiedDate").Year.ToString() == comboBox3.Text;
         }
